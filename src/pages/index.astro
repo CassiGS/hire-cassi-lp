@@ -33,37 +33,51 @@ const work = await Promise.all(
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
     <h4 class="animate font-semibold text-black dark:text-white">
-      Hi, I'm Nano <span class="text-xl">👋🏻</span> 
+      Hi, I'm Cassi <span class="text-xl">👋🏻</span> 
     </h4>
     <div class="space-y-16">
       <section>
         <article class="space-y-4">
           <p class="animate">
-            I am a minimal, seo friendly, accessible portfolio and blog for developers. 
-            I am an even more lightweight version of my popular theme
-            <Link href="https://github.com/markhorn-dev/astro-sphere" aria-label="Astro Sphere on Github" external>
-              Astro Sphere
-            </Link>.
-            I have a lighthouse scores of 100 across the board for performance, 
-            accesibility, best practices and SEO.
-          </p>
-          <p class="animate">
-            I come packed with full type safety, a sitemap, an rss feed, markdown 
-            and mdx support (use components in your markdown) through astro integrations.
-            I am styled with tailwind and come preconfigured with light, dark and 
-            system/os theme preferences out of the box.
-          </p>
-          <p class="animate">
-            Visit
-            <Link href="https://github.com/markhorn-dev/astro-nano" aria-label="Astro Nano on Github" external>
-              Astro Nano on Github
-            </Link>
-            to fork the repository, read the docs or one-click deploy on Vercel or Netlify. 
+            I'm a design-forward Frontend Developer specializing in building web, marketing, and UX experiences. 
           </p>
         </article>
+        <ul class="flex flex-wrap gap-2">
+          {SOCIALS.map(SOCIAL => (
+            <li class="flex gap-x-2 text-nowrap">
+              <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}>
+                {SOCIAL.NAME}
+              </Link>
+              {"/"}
+            </li>
+          ))}
+          <li class="line-clamp-1">
+            <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
+              {SITE.EMAIL}
+            </Link>
+          </li>
+        </ul>
       </section>
-
       <section class="animate space-y-6">
+        <div class="flex flex-wrap gap-y-2 items-center justify-between">
+          <h5 class="font-semibold text-black dark:text-white">
+            About
+          </h5>
+          <article class="space-y-4">
+          <p class="animate">
+           I've worn many hats in my career. From design work, to customer service, to marketing teams - I'm a frontend developer that understands the needs to a variety of team members. 
+          </p>
+          <p class="animate">
+          Need great UX and UI experiences? I bring a strong design sensibility to Frontend development, which means seamless collaboration with designers and faithful translation of wireframes into polished, production-ready interfaces. I enjoy working within and building design systems that keep code scalable, consistent, and easy to reuse.
+          </p>
+          <p class="animate">
+            Working on a marketing team? I’ve spent 5+ years on the technical side of marketing, so I understand the importance of performance, SEO, information architecture, and effective landing page layouts. I’m comfortable collaborating cross-functionally and bridging the gap between technical and non-technical teammates.
+          </p>
+          <p class="animate">I’m also editor-friendly. With a strong background in CMS platforms, I design with the end user in mind—whether that’s a content marketer publishing a blog post or a demand gen specialist building a landing page. I create flexible, intuitive editor experiences that help teams move quickly and confidently.
+</p>
+        </article>
+      </section>
+      <!-- <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
           <h5 class="font-semibold text-black dark:text-white">
             Latest posts
@@ -79,12 +93,12 @@ const work = await Promise.all(
             </li>
           ))}
         </ul>
-      </section>
+      </section> -->
 
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
           <h5 class="font-semibold text-black dark:text-white">
-            Work Experience
+            Relevant Experience
           </h5>
           <Link href="/work">
             See all work
@@ -113,12 +127,38 @@ const work = await Promise.all(
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
           <h5 class="font-semibold text-black dark:text-white">
-            Recent projects
+            Tech Stack
           </h5>
-          <Link href="/projects">
-            See all projects
-          </Link>
+          <article>
+          <p>
+            This is a small sample of the technologies I'm already comfortable working with. Like every good developer though, I'm learning new stacks every day. Don't see your stack on here? Let's chat - I can work quickly to get up to speed on whatever stack your team is using. 
+          </p>
+        </article>
         </div>
+        <h6 class="font-semibold text-black dark:text-white">
+            Code
+        </h6>
+        <ul class="flex flex-col gap-4">
+          {projects.map(project => (
+            <li>
+              <ArrowCard entry={project} />
+            </li>
+          ))}
+        </ul>
+        <h6 class="font-semibold text-black dark:text-white">
+            CMS Systems
+        </h6>
+        <ul class="flex flex-col gap-4">
+          {projects.map(project => (
+            <li>
+              <ArrowCard entry={project} />
+            </li>
+          ))}
+        </ul>
+
+        <h6 class="font-semibold text-black dark:text-white">
+            Design
+        </h6>
         <ul class="flex flex-col gap-4">
           {projects.map(project => (
             <li>
@@ -133,26 +173,12 @@ const work = await Promise.all(
           Let's Connect
         </h5>
         <article>
-          <p>
+          <p class="animate">
             If you want to get in touch with me about something or just to say hi,
-            reach out on social media or send me an email.
+            reach out on LinkedIn or send me an email.
           </p>
         </article>
-        <ul class="flex flex-wrap gap-2">
-          {SOCIALS.map(SOCIAL => (
-            <li class="flex gap-x-2 text-nowrap">
-              <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}>
-                {SOCIAL.NAME}
-              </Link>
-              {"/"}
-            </li>
-          ))}
-          <li class="line-clamp-1">
-            <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
-              {SITE.EMAIL}
-            </Link>
-          </li>
-        </ul>
+  
       </section>
     </div>
   </Container>
