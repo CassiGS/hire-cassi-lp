@@ -174,8 +174,9 @@ const work = await Promise.all(
         </h2>
         <article>
           <p class="animate">
-            If you want to get in touch with me about something or just to say hi,
-            reach out on LinkedIn or send me an email.
+            If you'd like to chat more about a role at your company or a new project - please reach out to me on <Link href="https://www.linkedin.com/in/cassigs/" external>LinkedIn</Link> or by email at      <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
+              {SITE.EMAIL}
+            </Link>
           </p>
         </article>
   

@@ -50,11 +50,27 @@ article {
   @apply prose-headings:text-stone-100 prose-headings:dark:text-stone-50;
 }
 
+section {
+  z-index: 2;
+  position: relative;
+}
+
+button {
+  @apply font-mono font-semibold;
+  @apply relative w-fit flex py-1.5 flex-nowrap rounded;
+  @apply border border-indigo-600/100 dark:border-rose-500;
+  @apply bg-indigo-600 hover:bg-stone-50 dark:bg-rose-500 dark:hover:bg-stone-900;
+  @apply text-stone-50 hover:text-indigo-600 dark:text-stone-900 dark:hover:text-stone-50;
+  @apply transition-all;
+}
+
 :target:before {
     content: "";
     display: block;
-    height: 100px;
-    margin: -100px 0 0;
+    height: 75px;
+    margin: -75px 0 0;
+    position: relative;
+    z-index:-1;
 }
 
 @layer utilities {
