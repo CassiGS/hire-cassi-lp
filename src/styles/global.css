@@ -5,6 +5,7 @@
 html {
   overflow-y: scroll;
   color-scheme: light;
+  scroll-behavior: smooth;
 }
 
 html.dark {
@@ -47,6 +48,13 @@ article {
   @apply max-w-full prose dark:prose-invert prose-img:mx-auto prose-img:my-auto;
   @apply prose-headings:font-semibold prose-p:font-sans;
   @apply prose-headings:text-stone-100 prose-headings:dark:text-stone-50;
+}
+
+:target:before {
+    content: "";
+    display: block;
+    height: 100px;
+    margin: -100px 0 0;
 }
 
 @layer utilities {
