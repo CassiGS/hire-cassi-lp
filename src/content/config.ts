@@ -37,9 +37,9 @@ const education = defineCollection({
   type: "content",
   schema: z.object({
     school: z.string(),
-    description: z.string(),
-    dateStart: z.coerce.date(),
-    dateEnd: z.union([z.coerce.date(), z.string()]),
+    degree: z.string(),
+    yearStart: z.string(),
+    yearEnd: z.string(),
   }),
 });
 
