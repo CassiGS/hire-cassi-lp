@@ -22,3 +22,5 @@ export type CMSStack = string[];
 
 export type DesignStack = string[];
 
+export type GeneralStack = string[];
+

@@ -1,4 +1,4 @@
-import type { Site, Metadata, Socials } from "@types";
+import type { Site, Metadata, Socials, CodeStack, CMSStack, DesignStack, GeneralStack } from "@types";
 
 export const SITE: Site = {
   NAME: "CassiGS / Frontend Developer",
