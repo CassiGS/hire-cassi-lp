@@ -1,5 +1,6 @@
 ---
 import Container from "@components/Container.astro";
+import Link from "@components/Link.astro"
 import { SITE } from "@consts";
 import BackToTop from "@components/BackToTop.astro";
 ---
@@ -13,7 +14,7 @@ import BackToTop from "@components/BackToTop.astro";
     </div>
     <div class="flex justify-between items-center">
       <div>
-        &copy; 2024 {`|`} {SITE.NAME}
+        &copy; 2025 {`|`} {SITE.NAME} {`|`} Built using <Link href="https://github.com/markhorn-dev/astro-sphere">Astro w/ Astro Sphere Theme</Link> 
       </div>
       <div class="flex flex-wrap gap-1 items-center">
         <button

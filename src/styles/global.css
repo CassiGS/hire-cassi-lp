@@ -73,6 +73,10 @@ button {
     z-index:-1;
 }
 
+nav a {
+  @apply text-sm;
+}
+
 @layer utilities {
   article a {
     @apply font-sans text-current underline underline-offset-2;
