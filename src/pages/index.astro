@@ -4,8 +4,9 @@ import Container from "@components/Container.astro";
 import PageLayout from "@layouts/PageLayout.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import Link from "@components/Link.astro";
+import Tag from '@components/Tag.astro'
 import { dateRange } from "@lib/utils";
-import { SITE, HOME, SOCIALS } from "@consts";
+import { SITE, HOME, SOCIALS, CODE_STACK, CMS_STACK, DESIGN_STACK, GENERAL_STACK } from "@consts";
 
 const blog = (await getCollection("blog"))
   .filter(post => !post.data.draft)
@@ -27,7 +28,6 @@ const work = await Promise.all(
     return { ...item, Content };
   })
 );
-
 ---
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
@@ -107,18 +107,20 @@ const work = await Promise.all(
         <ul class="flex flex-col space-y-4">
           {work.map(entry => (
             <li>
-              <div class="text-sm opacity-75">
-                {dateRange(entry.data.dateStart, entry.data.dateEnd)}
-              </div>
-              <div class="font-semibold text-black dark:text-white">
+      
+              <div class="font-bold font-mono text-indigo-600 dark:text-rose-500 mb-.75">
                 {entry.data.company}
               </div>
-              <div class="text-sm opacity-75">
-                {entry.data.role}
+              <div class="text-sm font-mono text-indigo-400 dark:text-rose-200 mb-3">
+                {entry.data.role} / {dateRange(entry.data.dateStart, entry.data.dateEnd)}
+              </div>
+              <div class="flex gap-2">
+                {entry.data.technologies.map(tag => <Tag tag={tag} />)}
               </div>
               <article>
                 <entry.Content />
               </article>
+
             </li>
           ))}
         </ul>
@@ -135,37 +137,59 @@ const work = await Promise.all(
           </p>
         </article>
         </div>
-        <h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>    
+        <h3 class="mb-1">
             Code
         </h3>
         <ul class="flex flex-col gap-4">
-          {projects.map(project => (
+          {CODE_STACK.map(tag => (
             <li>
-              <ArrowCard entry={project} />
+              <Tag tag={tag} />
             </li>
           ))}
         </ul>
-        <h3>
-            CMS Systems
+        </div>
+        
+        <div>    
+        <h3 class="mb-1">
+            CMS
         </h3>
         <ul class="flex flex-col gap-4">
-          {projects.map(project => (
+          {CMS_STACK.map(tag => (
             <li>
-              <ArrowCard entry={project} />
+              <Tag tag={tag} />
             </li>
           ))}
         </ul>
+        </div>
 
-        <h3>
+        <div>    
+           <h3 class="mb-1">
             Design
         </h3>
-        <ul class="flex flex-col gap-4">
-          {projects.map(project => (
+             <ul class="flex flex-col gap-4">
+      {DESIGN_STACK.map(tag => (
             <li>
-              <ArrowCard entry={project} />
+              <Tag tag={tag} />
             </li>
           ))}
         </ul>
+        </div>
+
+        <div>    
+           <h3 class="mb-1">
+            General
+        </h3>
+             <ul class="flex flex-col gap-4">
+      {GENERAL_STACK.map(tag => (
+            <li>
+              <Tag tag={tag} />
+            </li>
+          ))}
+        </ul>
+        </div>
+      </div>
       </section>
 
       <section class="animate space-y-4">

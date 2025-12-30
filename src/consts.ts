@@ -4,7 +4,7 @@ export const SITE: Site = {
   NAME: "CassiGS | Frontend Developer",
   EMAIL: "ccgall@gmail.com",
   NUM_POSTS_ON_HOMEPAGE: 3,
-  NUM_WORKS_ON_HOMEPAGE: 2,
+  NUM_WORKS_ON_HOMEPAGE: 3,
   NUM_PROJECTS_ON_HOMEPAGE: 3,
 };
 
@@ -38,3 +38,20 @@ export const SOCIALS: Socials = [
     HREF: "https://www.linkedin.com/in/cassigs/",
   }
 ];
+
+export const CODE_STACK: CodeStack = [
+  'ReactJS', 'HTML', "CSS/SASS/Tailwind"
+]
+
+
+export const CMS_STACK: CMSStack = [
+  'Wordpress', 'Contentful', "Drupal"
+]
+
+export const DESIGN_STACK: DesignStack = [
+  "UX/UI Principles", "Figma", "Responsive Design"
+]
+
+export const GENERAL_STACK: GeneralStack = [
+  "Cross Team Collaboration", "Web Performance & SEO", "Agile Workflow"
+]

@@ -15,3 +15,10 @@ export type Socials = {
   NAME: string;
   HREF: string;
 }[];
+
+export type CodeStack = string[];
+
+export type CMSStack = string[];
+
+export type DesignStack = string[];
+
